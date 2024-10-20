@@ -1,0 +1,101 @@
+/*--------------------------------------------------------------
+# Testimonial-block
+--------------------------------------------------------------*/
+.testimonial-section{
+    background-color: #f5f8fc;
+    overflow: hidden;
+}
+.testimonial-slider-wrapper{
+    margin: -30px;
+}
+.testimonial-slider{
+    overflow: hidden;
+    padding: 30px;
+    .swiper-slide-active{
+        .testimonial-item{
+            opacity: 1;
+        }
+    }
+}
+.testimonial-item{
+    padding: 33px 40px 40px;
+    border-radius: 20px;
+    background-color: $white;
+    box-shadow: 2px 3.464px 24px 0px rgb(106 105 194 / 20%);
+    opacity: 0.3;
+    transition: all 0.3s;
+    @media only screen and (max-width: 1199px) {
+        padding: 23px 30px 30px;
+    }
+    @media only screen and (max-width: 1099px) {
+        padding: 18px 25px 25px;
+    }
+    .testimonial-icon-list{
+        li{
+            display: inline-block;
+            i{
+                font-size: 18px;
+                font-weight: 900;
+                color: #e4ab19;
+                @media only screen and (max-width: 1199px) {
+                    font-size: 16px;
+                }
+                @media only screen and (max-width: 1099px) {
+                    font-size: 14px;
+                }
+            }
+        }
+        li+li{
+            margin-left: 5px;
+            @media only screen and (max-width: 1199px) {
+                margin-left: 2px;
+            }
+            @media only screen and (max-width: 1199px) {
+                margin-left: 0;
+            }
+        }
+    }
+    .testimonial-title{
+        color: $color__heading;
+    }
+    .testimonial-user-area{
+        margin-bottom: 15px;
+        display: flex;
+        align-items: center;
+        .user-area{
+            img{
+                margin-right: 10px;
+                height: 60px;
+                width: 60px;
+                border-radius: 10px;
+                @media only screen and (max-width: 1199px) {
+                    margin-right: 20px;
+                    height: 55px;
+                    width: 55px;
+                }
+                @media only screen and (max-width: 1099px) {
+                    margin-right: 15px;
+                    height: 50px;
+                    width: 50px;
+                }
+            }
+        }
+        .title-area{
+            h5{
+                font-weight: 600;
+                margin-bottom: 5px;
+                color: $color__text;
+                @media only screen and (max-width: 1199px) {
+                    font-size: 18px;
+                }
+                @media only screen and (max-width: 1099px) {
+                    font-size: 16px;
+                }
+            }
+            p{
+                color: $base--color;
+                font-weight: 400;
+            }
+        }
+    }
+}

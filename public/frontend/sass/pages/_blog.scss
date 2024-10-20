@@ -1,0 +1,279 @@
+/*-------------------------------------------------
+    [ ### blog block ]
+*/
+.blog-section{
+    &.style-01{
+        .blog-thumb{
+            height: 500px;
+            @media only screen and (max-width: 1199px) {
+                height: 360px;
+            }
+            @media only screen and (max-width: 991px) {
+                height: auto;
+            }
+            img{
+                height: 100%;
+                object-fit: cover;
+                object-position: center;
+            }
+        }
+    }
+}
+
+.blog-item{
+    box-shadow: 0 10px 30px rgb(0 0 0 / 10%);
+    border-radius: 10px;
+}
+.blog-thumb{
+    position: relative;
+    img{
+        width: 100%;
+        border-radius: 10px 10px 0 0;
+        transition: all 0.5s;
+        z-index: -1;
+    }
+    .category{
+        position: absolute;
+        left: 0;
+        bottom: -17px;
+        background-color: $white;
+        color: $base--color;
+        font-weight: 500;
+        padding: 8px 20px;
+        border-radius: 0 10px 0 0;
+        z-index: 1;
+    }
+}
+.blog-content{
+    padding: 20px;
+    .title{
+        color: $color__heading;
+        font-weight: 700;
+        a{
+            transition: all 0.3s;
+            &:hover{
+                color: $base--color;
+            }
+        }
+        @media only screen and (max-width: 575px) {
+            font-size: 18px;
+        }
+        p{
+            @media only screen and (max-width: 575px) {
+                font-size: 12px;
+            }
+        }
+    }
+    p{
+        @media only screen and (max-width: 575px) {
+            font-size: 14px;
+        }
+    }
+}
+.blog-btn{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    span{
+        color: $color__heading;
+        font-weight: 600;
+        i{
+            color: $base--color;
+        }
+    }
+    a{
+        color: $base--color;
+        font-size: 14px;
+        transition: all 0.3s;
+        i{
+            position: relative;
+            top: 1px;
+            @media only screen and (max-width: 575px) {
+                font-size: 12px;
+            }
+        }
+        &:hover{
+            color: $color--heading;
+        }
+        @media only screen and (max-width: 575px) {
+            font-size: 12px;
+        }
+    }
+}
+.blog-list {
+    margin-top: 30px;
+    margin-bottom: 20px;
+    li{
+        position: relative;
+        font-weight: 400;
+        padding-left: 35px;
+        padding-bottom: 15px;
+        &::before{
+            position: absolute;
+            top: 2px;
+            left: 0;
+            content: "\f00c";
+            font-family: "Line Awesome Free";
+            width: 20px;
+            height: 20px;
+            line-height: 20px;
+            background-color: $base--color;
+            border-radius: 50%;
+            font-size: 14px;
+            color: $white;
+            text-align: center;
+            font-weight: 900;
+        }
+    }
+}
+.blog-tag-wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    border-top: 1px dashed $border--base;
+    padding-top: 20px;
+    margin-top: 30px;
+    span{
+        font-weight: 600;
+        margin-right: 10px;
+    }
+    .blog-footer-tag{
+        li{
+            display: inline-block;
+            background-color: #d7e1e9;
+            padding: 3px 10px;
+            font-weight: 500;
+            font-size: 14px;
+        }
+        li+li{
+            margin-left: 10px;
+        }
+    }
+}
+.blog-comment-area{
+    margin-top: 40px;
+}
+.blog-sidebar{
+    position: sticky;
+    top: 10%;
+}
+.widget-box {
+    background: $white;
+    border: 1px solid #f1f1f1;
+    box-shadow: 0px 10px 15px rgb(221 221 221 / 15%);
+    padding: 30px;
+    border-radius: 10px;
+    @media only screen and (max-width: 991px) {
+        padding: 20px;
+    }
+    .widget-title{
+        margin-bottom: 20px;
+        position: relative;
+        z-index: 2;
+        &::before{
+            position: absolute;
+            content: "";
+            top: 3px;
+            left: -30px;
+            width: 3px;
+            height: 20px;
+            background-color: $base--color;
+            @media only screen and (max-width: 991px) {
+                left: -20px;
+            }
+        }
+    }
+}
+.search-widget-box{
+    .search-form{
+        position: relative;
+        button{
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background-color: transparent;
+            color: $color--text;
+        }
+    }
+}
+.category-widget-box{
+    .category-list{
+        margin-bottom: -15px;
+        li{
+            border: 1px solid $border--base;
+            padding: 15px 20px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            a{
+                display: block;
+                transition: all 0.3s;
+                &:hover{
+                    color: $base--color;
+                }
+            }
+            span{
+                float: right;
+            }
+        }
+    }
+}
+.popular-widget-box {
+  margin-bottom: -20px;
+}
+.single-popular-item {
+  margin-bottom: 30px;
+    .popular-item-thumb{
+        width: 90px;
+        height: 90px;
+        border-radius: 5px;
+        overflow: hidden;
+        a{
+            display: block;
+            height: 100%;
+        }
+        img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+    .popular-item-content{
+        width: calc(100% - 90px);
+        padding-left: 20px;
+        .title{
+            margin-bottom: 0;
+            a{
+                transition: all 0.3s;
+                &:hover{
+                    color: $base--color;
+                }
+            }
+        }
+        .date{
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+    }
+}
+.tag-widget-box{
+    .tag-list {
+        margin: -5px;
+        li{
+            display: inline-block;
+            border: 1px solid $border--base;
+            font-size: 14px;
+            border-radius: 5px;
+            padding: 5px 10px;
+            margin: 5px;
+            -webkit-transition: all 0.3s;
+            transition: all 0.3s;
+            &:hover{
+                border: 1px solid $base--color;
+                color: $base--color;
+            }
+        }
+    }
+}

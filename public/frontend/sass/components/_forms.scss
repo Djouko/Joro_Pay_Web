@@ -1,0 +1,506 @@
+/*-------------------------------------------------
+    [ ## Fields ]
+*/
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    &:focus {
+        outline: none;
+    }
+}
+input,textarea{
+    padding: 12px 20px;
+    &::placeholder{
+        color: $color__heading;
+    }
+}
+textarea {
+    display: block;
+    width: 100%;
+    display: block;
+    min-height: 120px;
+}
+input,
+select,
+textarea {
+    border: 1px solid $border--base;
+    vertical-align: baseline;
+    font-size: 100%;
+    color: $color__heading;
+}
+label {
+    font-size: 15px;
+    font-weight: 500;
+    margin-bottom: 10px;
+    font-family: $font_heading;
+    display: block;
+}
+/*-------------------------------------------------
+    [ ## Forms ]
+*/
+select{
+    outline: none;
+    cursor: pointer;
+}
+option{
+    color: $color__heading;
+}
+.input-group{
+    margin-bottom: 15px;
+    flex-wrap: nowrap;
+    input{
+        border-radius: 5px 0 0 5px;
+        border: 1px solid rgba(107, 124, 147, 0.15);
+        color: #6b7c93;
+        height: 45px;
+    }
+    .nice-select{
+        width: auto;
+        padding: 0 30px 0 15px;
+        border: none !important;
+        background-color: $base--color !important;
+        color: $white;
+        line-height: 45px;
+        &::after{
+            border-bottom: 2px solid $white;
+            border-right: 2px solid $white;
+        }
+        .current{
+            color: $white;
+        }
+    }
+}
+.form-control:disabled, .form-control[readonly]{
+    background-color: rgba($base--color, 0.2);
+}
+.input-group-append, .input-group-prepend {
+    display: -ms-flexbox;
+    display: flex;
+}
+.input-group-append{
+    input{
+        border-radius: 5px 0 0 5px;
+        border: 1px solid $border--base;
+        border-right: none;
+        background-color: $white;
+    }
+}
+.input-group-prepend {
+    .input-group-text{
+        border-radius: 5px 0 0 5px;
+    }
+}
+.input-group-text {
+    border: none;
+    font-size: 14px;
+    background: $base--color;
+    color: $white;
+    height: 45px;
+    border-radius: 0 5px 5px 0;
+    font-weight: 500;
+}
+.custom-check-group {
+    display: block;
+    margin-bottom: 12px;
+    input{
+        padding: 0;
+        height: initial;
+        width: initial;
+        margin-bottom: 0;
+        display: none;
+        cursor: pointer;
+        &:checked{
+            &+label{
+                &::before{
+                    background-color: $base--color;
+                    border: 1px solid $base--color;
+                }
+                &::after{
+                    content: '';
+                    display: block;
+                    position: absolute;
+                    top: 3px;
+                    left: 7px;
+                    width: 5px;
+                    height: 10px;
+                    border: solid $white;
+                    border-width: 0 2px 2px 0;
+                    transform: rotate(45deg);
+                }
+            }
+        }
+    }
+    label{
+        position: relative;
+        cursor: pointer;
+        &::before{
+            content: '';
+            -webkit-appearance: none;
+            appearance: none;
+            background: $white;
+            border: 1px solid $border--base;
+            border-radius: 3px;
+            padding: 8px;
+            display: inline-block;
+            position: relative;
+            vertical-align: middle;
+            cursor: pointer;
+            margin-right: 8px;
+            top: -2px;
+        }
+    }
+}
+.form-group {
+    margin-bottom: 20px;
+}
+.form-control{
+    border: 1px solid $border--base;
+    font-size: 14px;
+    height: 50px;
+    &:focus{
+        box-shadow: none;
+        border: 1px solid $border--base;
+    }
+}
+.form--control{
+    background-color: transparent;
+    border: 1px solid $border--base;
+    box-shadow: none;
+    height: 45px;
+    color: $color__heading;
+    border-radius: 5px;
+    font-size: 15px;
+    font-family: $font_heading;
+    font-weight: 600;
+    padding: 10px 15px;
+    width: 100%;
+    &:focus{
+        background-color: transparent;
+        border: 1px solid $base--color;
+        box-shadow: none;
+        color: $color__heading;
+    }
+    &::placeholder{
+        color: $color__text;
+    }
+}
+.radio-item [type="radio"]:checked{
+    position: absolute;
+    left: -9999px;
+}
+.radio-item [type="radio"]:not(:checked){
+    position: absolute;
+    left: -9999px;
+}
+.radio-item [type="radio"]:checked + label{
+    position: relative;
+    padding-left: 28px;
+    cursor: pointer;
+    line-height: 20px;
+    display: inline-block;
+    color: $color__heading;
+    margin: 0;
+}
+.radio-item [type="radio"]:not(:checked) + label{
+    position: relative;
+    padding-left: 28px;
+    cursor: pointer;
+    line-height: 20px;
+    display: inline-block;
+    color: $color__heading;
+    margin: 0;
+}
+.radio-item [type="radio"]:checked + label:before{
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 15px;
+    height: 15px;
+    border: 10px solid $base--color;
+    border-radius: 100%;
+    background: $white;
+}
+.radio-item [type="radio"]:checked + label:after{
+    content: '';
+    width: 10px;
+    height: 10px;
+    background: $white;
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    border-radius: 100%;
+    -webkit-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+    opacity: 0;
+    -webkit-transform: scale(0);
+    transform: scale(0);
+}
+.radio-item [type="radio"]:not(:checked) + label:before{
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 15px;
+    height: 15px;
+    border: 2px solid $border--base;
+    border-radius: 100%;
+    background: $white;
+}
+.radio-item [type="radio"]:not(:checked) + label:after{
+    content: '';
+    width: 12px;
+    height: 12px;
+    background: $base--color;
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    border-radius: 100%;
+    -webkit-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+    opacity: 0;
+    -webkit-transform: scale(0);
+    transform: scale(0);
+}
+.radio-item [type="radio"]:checked + label:after {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+}
+.select2-container{
+    -ms-flex: 0 0 100%;
+    flex: 0 0 100%;
+    width: 100%;
+}
+.selection{
+    width: 100%;
+}
+.select2-selection--single{
+    width: 100%;
+    height: 45px !important;
+    outline: none;
+    background: transparent !important;
+    font-size: 15px;
+    box-shadow: none;
+    padding: 10px 10px;
+    border-radius: 5px;
+    vertical-align: top;
+    display: inline-block;
+    border: 1px solid $border--base !important;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    span{
+        margin: 0;
+        width: 100%;
+        color: $color__text;
+        line-height: initial;
+        font-weight: 600;
+    }
+}
+.select2-container--default .select2-selection--single .select2-selection__arrow{
+    height: auto;
+    position: absolute;
+    top: 22px;
+    right: 7px;
+    width: 20px;
+}
+.select2-container--default .select2-selection--single .select2-selection__arrow b{
+    border-color: $color__text transparent transparent transparent;
+}
+.select2-container--default.select2-container--open .select2-selection--single .select2-selection__arrow b{
+    border-color: transparent transparent $color__text transparent;
+}
+.submit-btn{
+    padding: 12px 20px;
+    color: $white;
+    background: $section--bg;
+    font-weight: 600;
+    font-size: 14px;
+    border-radius: 5px;
+    font-family: $font_heading;
+    @media only screen and (max-width: 991px) {
+        padding: 10px 20px;
+    }
+}
+
+
+.nice-select{
+    height: 45px;
+    line-height: 45px;
+    border: 1px solid $border--base !important;
+    float: unset;
+    padding: 0 25px;
+    color: $color__heading !important;
+    .list{
+        background-color: $white;
+        left: auto;
+        right: 0;
+    }
+}
+.nice-select .option:hover, .nice-select .option.focus, .nice-select .option.selected.focus{
+    background-color: $base--color;
+    color: $white;
+}
+.nice-select .list:hover .option:not(:hover){
+    color: $color--heading;
+}
+
+
+
+.custom-select {
+    background-color: transparent;
+    border-radius: 5px !important;
+    display: flex;
+    align-items: center;
+    min-width: 100%;
+    cursor: pointer;
+    border: 1px solid $border--base;
+    height: 45px;
+  }
+  .custom-select.active .custom-select-inner::before {
+    -webkit-transform: scale(0.96, 0.8) rotate(-50deg);
+    transform: scale(0.96, 0.8) rotate(-50deg);
+  }
+  .custom-select.active .custom-select-inner::after {
+    -webkit-transform: scale(0.96, 0.8) rotate(50deg);
+    transform: scale(0.96, 0.8) rotate(50deg);
+  }
+  .custom-select .custom-select-inner {
+    position: relative;
+    flex: 1 1 0%;
+    display: flex;
+    align-items: center;
+    padding: 5px 16px;
+  }
+  .custom-select .custom-select-inner::before, .custom-select .custom-select-inner::after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 5px;
+    height: 2px;
+    border-radius: 1px;
+    top: 50%;
+    right: 12px;
+    background: $color__text;
+    transition: all 0.3s ease;
+  }
+  .custom-select .custom-select-inner::before {
+    margin-right: 3px;
+    transform: scale(0.96, 0.8) rotate(50deg);
+  }
+  .custom-select .custom-select-inner::after {
+    transform: scale(0.96, 0.8) rotate(-50deg);
+  }
+  .custom-select img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 10px;
+  }
+  .custom-select .custom-currency {
+    color: $color__heading;
+    font-size: 14px;
+    font-weight: 600;
+  }
+  
+  .custom-select-wrapper {
+    position: absolute;
+    top: 75px;
+    left: 0;
+    width: 100%;
+    background-color: #ffffff;
+    border: 1px solid $border--base;
+    z-index: 9;
+    border-radius: 15px;
+    margin-left: 0 !important;
+    border-top-left-radius: 15px !important;
+    border-bottom-left-radius: 15px !important;
+    transform-origin: top left;
+    transform: scaleY(0);
+    transition: all 0.3s;
+    &.kyc{
+        top: 47px;
+    }
+  }
+  .custom-select-wrapper.active {
+    transform: scaleY(1);
+  }
+  
+  .custom-select-search-wrapper {
+    position: relative;
+    border-bottom: 1px solid $border--base;
+  }
+  .custom-select-search-wrapper .search-btn {
+    position: absolute;
+    top: 13px;
+    left: 20px;
+    padding: 0;
+    background-color: transparent;
+    font-size: 20px;
+    color: #263159;
+  }
+  .custom-select-search-wrapper input {
+    padding-left: 50px;
+    border: none !important;
+  }
+  .custom-select-search-wrapper input:focus {
+    border: none !important;
+  }
+  
+  .custom-select-list {
+    max-height: 190px;
+    overflow-y: auto;
+  }
+  .custom-select-list .custom-option {
+    display: flex;
+    align-items: center;
+    padding: 8px 20px;
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+  .custom-select-list .custom-option:hover, .custom-select-list .custom-option.active {
+    background-color: #f7f7f7;
+  }
+  .custom-select-list .custom-option img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    -o-object-fit: cover;
+       object-fit: cover;
+    margin-right: 20px;
+  }
+  .custom-select-list .custom-option .custom-country {
+    -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
+  }
+
+
+  .account-form .form-group .show-pass {
+    position: absolute;
+    top: 12px;
+    right: 25px;
+    font-size: 14px;
+    transition: 0.5s;
+  }
+
+  .otp {
+  display: inline-block;
+  width: 70px;
+  height: 50px;
+  text-align: center;
+  padding: 0;
+  border-radius: 5px;
+}
+.otp:focus {
+  border: 3px solid #263159;
+}
+
+.otp.required {
+  border: 3px solid #ea5455;
+}
+
+#time {
+  color: #ea5455;
+}
